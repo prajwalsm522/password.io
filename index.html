@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset= "utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="author" content="prajwal shivpurmath"/>
+        
+        <link rel="stylesheet"
+              href="stylesheet.css">
+        <title>password validator</title>
+        <style>                                         
+            img{
+                opacity: 0.5;               
+            }
+        </style>                                    <!--img opacity not working-->
+        <script>var is_visible = false;
+
+function see()
+{
+    var input = document.getElementById("password");
+    var see = document.getElementById("see");
+    
+    if(is_visible)
+    {
+        input.type = 'password';
+        is_visible = false; 
+        see.style.color='gray';
+    }
+    else
+    {
+        input.type = 'text';
+        is_visible = true; 
+        see.style.color='#262626';
+    }
+    
+}
+
+function check()
+{
+    var input = document.getElementById("password").value;
+    
+input=input.trim();
+document.getElementById("password").value=input;
+    document.getElementById("count").innerText="Length : " + input.length;
+    if(input.length>=5)
+    {
+        document.getElementById("check0").style.color="green";
+    }
+    else
+    {
+       document.getElementById("check0").style.color="tomato"; 
+    }
+    
+    if(input.length<=10)
+    {
+        document.getElementById("check1").style.color="green";
+    }
+    else
+    {
+       document.getElementById("check1").style.color="tomato"; 
+    }
+    
+    if(input.match(/[0-9]/i))
+    {
+        document.getElementById("check2").style.color="green";
+    }
+    else
+    {
+       document.getElementById("check2").style.color="tomato"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i))
+    {
+        document.getElementById("check3").style.color="green";
+    }
+    else
+    {
+       document.getElementById("check3").style.color="tomato"; 
+    }
+    
+    if(input.match(' '))
+    {
+        document.getElementById("check4").style.color="tomato";
+    }
+    else
+    {
+       document.getElementById("check4").style.color="green"; 
+    }
+    
+}
+</script>
+        
+     </head>
+    <body>
+        <h1 style="text-align: center">hey this site validates your  password and checks whether you are pewned are not!!!</h1>
+        <p> please enter your password in the box below</p>
+        <input type="password" id="password"
+               placeholder="enter password"
+               onInput= "check()" />
+        
+        <br>
+        <div id = "set">
+            <div id = "count">length : 0 </div>
+            <i id = "see" onclick="see()"
+               class="far fa-eye"></i>
+            
+            
+        </div>
+        
+        <div id="check0">
+        <i class= "far fa-check-circle"></i>
+        <span>Lenght more than 5.</span>
+        </div>
+        
+        <div id="check1">
+        <i class= "far fa-check-circle"></i>
+        <span>Lenght less than 10.</span>
+        </div>
+        
+        <div id="check2">
+        <i class= "far fa-check-circle"></i>
+        <span>should contain number.</span>
+        </div>
+        
+        <div id="check3">
+        <i class= "far fa-check-circle"></i>
+        <span>Contaain special character.</span>
+        </div>
+      
+         <div id= "check4">
+        <i class= "far fa-check-circle"></i>
+        <span>NO white space</span>
+        </div>
+        
+        
+         <div class="developer info">
+             <p>developer:prajwal sm</p>
+             <i>verilog recreations</i><br />
+         <i>contact:8050322356</i><sup>*</sup>
+
+<p><small> </small></p>        <!--this is left to write something inside small-->
+                             <!--<small> tag is used to describe small text like for copywrites etc-->
+         </div>
+        
+        
+        
+    </body>
+</html>
+        
+        
+        
+        
+    
+    </body>
+        
+              
+        
+        
+    </head>
